@@ -5,7 +5,7 @@ import InputGroupText from "react-bootstrap/InputGroupText";
 
 import { IMaskInput } from 'react-imask';
 import {getTelMask} from "../../../utils/mask/getTelMask";
-const flagsImg = "../../assets/flags/";
+const flagsImg = "../../static/flags/";
 
 /**
  * Create a Bootstrap Formik field.
@@ -45,8 +45,10 @@ const PhoneField = ({id, name, values, setValues, label, ...props}) => {
                     name={name}
                     autoComplete={props.autoComplete || "tel"}
                     onAccept={handleAccept}
+                    onChange={undefined}
                     className={(props.className ? "form-control" + props.className : " form-control")}
                     ref={inputRef}
+                    {...props}
                 />
             </InputGroup>
         </Form.Group>
