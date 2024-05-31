@@ -1,31 +1,16 @@
 import React from 'react';
-import Form from "react-bootstrap/Form";
+import FormField from "./FormField";
 
-const GivenNameField = ({id, name = "firstName", values, setValues, label, ...props}) => {
+const FirstNameField = ({formId, name = "firstName", values, setValues, label, ...props}) => {
 
-    const handleChange = (e) => {
-        setValues({
-            ...values,
-            [name]: e.target.value
-        })
-    }
-
-    return (
-        <Form.Group className={"col-md-6 mb-3"}>
-            <Form.Label htmlFor={props.id}>
-                {props.label || "First Name"}
-            </Form.Label>
-            <Form.Control
-                id={props.id || "first-name-input"}
-                type={props.type || "text"}
-                name={name}
-                autoComplete={props.autoComplete || "given-name"}
-                value = {values[name]}
-                onChange = {handleChange}
-                {...props}
-            />
-        </Form.Group>
-    );
+    return <FormField formId={formId}
+                      name={name}
+                      values={values}
+                      setValues={setValues}
+                      label={label || "First Name"}
+                      size={"6"}
+                      autoComplete={"given-name"}
+                      {...props} />
 };
 
-export default GivenNameField;
+export default FirstNameField;
