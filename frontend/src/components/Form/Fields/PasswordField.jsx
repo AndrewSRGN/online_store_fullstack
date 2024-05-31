@@ -11,8 +11,7 @@ const PasswordField = ({formId, name = "password", values, setValues, label, ...
     }
 
     const bottomFormGroupChildren = (
-            <Form.Check className={"d-flex align-items-center"}
-                        type="checkbox"
+            <Form.Check type="checkbox"
                         label="Show password"
                         onChange={handleCheckboxChange}
             />
