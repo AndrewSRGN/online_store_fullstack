@@ -8,7 +8,12 @@ import {getTelMask} from "../../../utils/mask/getTelMask";
 const flagsImg = "../../static/flags/";
 
 /**
- * Create a Bootstrap Formik field.
+ * @param id {string} - The id of the input field.
+ * @param name {string} - The name of the input field.
+ * @param values {object} - The values of the input field.
+ * @param setValues {function} - The function to set the values of the input field.
+ * @param label {string} - The label of the input field.
+ * @param props {object} - The props of the input field.
  */
 
 const PhoneField = ({id, name = "phoneNumber", values, setValues, label, ...props}) => {
@@ -18,8 +23,6 @@ const PhoneField = ({id, name = "phoneNumber", values, setValues, label, ...prop
     const [countryName, setCountryName] = useState("unknown");
 
     const handleAccept = (value, mask) => {
-        value.replace(/[^0-9]/g, '');
-
         setValues({...values, [name]: value})
 
         const newMask = getTelMask(value);
