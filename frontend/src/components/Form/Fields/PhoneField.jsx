@@ -11,7 +11,7 @@ const flagsImg = "../../static/flags/";
  * Create a Bootstrap Formik field.
  */
 
-const PhoneField = ({id, name, values, setValues, label, ...props}) => {
+const PhoneField = ({id, name = "phoneNumber", values, setValues, label, ...props}) => {
     const inputRef = useRef(null);
     const [imageUrl, setImageUrl] = useState(flagsImg + "unknown.webp");
     const [mask, setMask] = useState(getTelMask(null));
